@@ -1,0 +1,5 @@
+source 'https://github.com/CocoaPods/Specs.git'
+platform :ios, '8.0'
+target ’46_Client_Server_APIs_OAuth_T’ do
+pod 'AFNetworking', '~> 3.0'
+end
