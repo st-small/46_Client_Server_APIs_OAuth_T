@@ -1,0 +1,534 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		5264201C1D115F67009D165E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 5264201B1D115F67009D165E /* main.m */; };
+		5264201F1D115F67009D165E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5264201E1D115F67009D165E /* AppDelegate.m */; };
+		526420251D115F67009D165E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 526420231D115F67009D165E /* Main.storyboard */; };
+		526420271D115F67009D165E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 526420261D115F67009D165E /* Assets.xcassets */; };
+		5264202A1D115F67009D165E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 526420281D115F67009D165E /* LaunchScreen.storyboard */; };
+		526420351D115F67009D165E /* _6_Client_Server_APIs_OAuth_TTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 526420341D115F67009D165E /* _6_Client_Server_APIs_OAuth_TTests.m */; };
+		526420401D115F67009D165E /* _6_Client_Server_APIs_OAuth_TUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5264203F1D115F67009D165E /* _6_Client_Server_APIs_OAuth_TUITests.m */; };
+		526420531D115FC0009D165E /* SiSFriend.m in Sources */ = {isa = PBXBuildFile; fileRef = 5264204E1D115FC0009D165E /* SiSFriend.m */; };
+		526420541D115FC0009D165E /* SiSFriendsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 526420501D115FC0009D165E /* SiSFriendsTableViewController.m */; };
+		526420551D115FC0009D165E /* SiSServerManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 526420521D115FC0009D165E /* SiSServerManager.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		526420311D115F67009D165E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5264200F1D115F67009D165E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 526420161D115F67009D165E;
+			remoteInfo = 46_Client_Server_APIs_OAuth_T;
+		};
+		5264203C1D115F67009D165E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5264200F1D115F67009D165E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 526420161D115F67009D165E;
+			remoteInfo = 46_Client_Server_APIs_OAuth_T;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		526420171D115F67009D165E /* 46_Client_Server_APIs_OAuth_T.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = 46_Client_Server_APIs_OAuth_T.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		5264201B1D115F67009D165E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		5264201D1D115F67009D165E /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		5264201E1D115F67009D165E /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		526420241D115F67009D165E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		526420261D115F67009D165E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		526420291D115F67009D165E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		5264202B1D115F67009D165E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		526420301D115F67009D165E /* 46_Client_Server_APIs_OAuth_TTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = 46_Client_Server_APIs_OAuth_TTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		526420341D115F67009D165E /* _6_Client_Server_APIs_OAuth_TTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = _6_Client_Server_APIs_OAuth_TTests.m; sourceTree = "<group>"; };
+		526420361D115F67009D165E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5264203B1D115F67009D165E /* 46_Client_Server_APIs_OAuth_TUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = 46_Client_Server_APIs_OAuth_TUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		5264203F1D115F67009D165E /* _6_Client_Server_APIs_OAuth_TUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = _6_Client_Server_APIs_OAuth_TUITests.m; sourceTree = "<group>"; };
+		526420411D115F67009D165E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5264204D1D115FC0009D165E /* SiSFriend.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SiSFriend.h; sourceTree = "<group>"; };
+		5264204E1D115FC0009D165E /* SiSFriend.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SiSFriend.m; sourceTree = "<group>"; };
+		5264204F1D115FC0009D165E /* SiSFriendsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SiSFriendsTableViewController.h; sourceTree = "<group>"; };
+		526420501D115FC0009D165E /* SiSFriendsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SiSFriendsTableViewController.m; sourceTree = "<group>"; };
+		526420511D115FC0009D165E /* SiSServerManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SiSServerManager.h; sourceTree = "<group>"; };
+		526420521D115FC0009D165E /* SiSServerManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SiSServerManager.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		526420141D115F67009D165E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5264202D1D115F67009D165E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		526420381D115F67009D165E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		5264200E1D115F67009D165E = {
+			isa = PBXGroup;
+			children = (
+				526420191D115F67009D165E /* 46_Client_Server_APIs_OAuth_T */,
+				526420331D115F67009D165E /* 46_Client_Server_APIs_OAuth_TTests */,
+				5264203E1D115F67009D165E /* 46_Client_Server_APIs_OAuth_TUITests */,
+				526420181D115F67009D165E /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		526420181D115F67009D165E /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				526420171D115F67009D165E /* 46_Client_Server_APIs_OAuth_T.app */,
+				526420301D115F67009D165E /* 46_Client_Server_APIs_OAuth_TTests.xctest */,
+				5264203B1D115F67009D165E /* 46_Client_Server_APIs_OAuth_TUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		526420191D115F67009D165E /* 46_Client_Server_APIs_OAuth_T */ = {
+			isa = PBXGroup;
+			children = (
+				5264201D1D115F67009D165E /* AppDelegate.h */,
+				5264201E1D115F67009D165E /* AppDelegate.m */,
+				5264204D1D115FC0009D165E /* SiSFriend.h */,
+				5264204E1D115FC0009D165E /* SiSFriend.m */,
+				5264204F1D115FC0009D165E /* SiSFriendsTableViewController.h */,
+				526420501D115FC0009D165E /* SiSFriendsTableViewController.m */,
+				526420511D115FC0009D165E /* SiSServerManager.h */,
+				526420521D115FC0009D165E /* SiSServerManager.m */,
+				526420231D115F67009D165E /* Main.storyboard */,
+				526420261D115F67009D165E /* Assets.xcassets */,
+				526420281D115F67009D165E /* LaunchScreen.storyboard */,
+				5264202B1D115F67009D165E /* Info.plist */,
+				5264201A1D115F67009D165E /* Supporting Files */,
+			);
+			path = 46_Client_Server_APIs_OAuth_T;
+			sourceTree = "<group>";
+		};
+		5264201A1D115F67009D165E /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				5264201B1D115F67009D165E /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		526420331D115F67009D165E /* 46_Client_Server_APIs_OAuth_TTests */ = {
+			isa = PBXGroup;
+			children = (
+				526420341D115F67009D165E /* _6_Client_Server_APIs_OAuth_TTests.m */,
+				526420361D115F67009D165E /* Info.plist */,
+			);
+			path = 46_Client_Server_APIs_OAuth_TTests;
+			sourceTree = "<group>";
+		};
+		5264203E1D115F67009D165E /* 46_Client_Server_APIs_OAuth_TUITests */ = {
+			isa = PBXGroup;
+			children = (
+				5264203F1D115F67009D165E /* _6_Client_Server_APIs_OAuth_TUITests.m */,
+				526420411D115F67009D165E /* Info.plist */,
+			);
+			path = 46_Client_Server_APIs_OAuth_TUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		526420161D115F67009D165E /* 46_Client_Server_APIs_OAuth_T */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 526420441D115F67009D165E /* Build configuration list for PBXNativeTarget "46_Client_Server_APIs_OAuth_T" */;
+			buildPhases = (
+				526420131D115F67009D165E /* Sources */,
+				526420141D115F67009D165E /* Frameworks */,
+				526420151D115F67009D165E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = 46_Client_Server_APIs_OAuth_T;
+			productName = 46_Client_Server_APIs_OAuth_T;
+			productReference = 526420171D115F67009D165E /* 46_Client_Server_APIs_OAuth_T.app */;
+			productType = "com.apple.product-type.application";
+		};
+		5264202F1D115F67009D165E /* 46_Client_Server_APIs_OAuth_TTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 526420471D115F67009D165E /* Build configuration list for PBXNativeTarget "46_Client_Server_APIs_OAuth_TTests" */;
+			buildPhases = (
+				5264202C1D115F67009D165E /* Sources */,
+				5264202D1D115F67009D165E /* Frameworks */,
+				5264202E1D115F67009D165E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				526420321D115F67009D165E /* PBXTargetDependency */,
+			);
+			name = 46_Client_Server_APIs_OAuth_TTests;
+			productName = 46_Client_Server_APIs_OAuth_TTests;
+			productReference = 526420301D115F67009D165E /* 46_Client_Server_APIs_OAuth_TTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		5264203A1D115F67009D165E /* 46_Client_Server_APIs_OAuth_TUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5264204A1D115F67009D165E /* Build configuration list for PBXNativeTarget "46_Client_Server_APIs_OAuth_TUITests" */;
+			buildPhases = (
+				526420371D115F67009D165E /* Sources */,
+				526420381D115F67009D165E /* Frameworks */,
+				526420391D115F67009D165E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				5264203D1D115F67009D165E /* PBXTargetDependency */,
+			);
+			name = 46_Client_Server_APIs_OAuth_TUITests;
+			productName = 46_Client_Server_APIs_OAuth_TUITests;
+			productReference = 5264203B1D115F67009D165E /* 46_Client_Server_APIs_OAuth_TUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		5264200F1D115F67009D165E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = SiS;
+				LastUpgradeCheck = 0730;
+				ORGANIZATIONNAME = "Stanly Shiyanovskiy";
+				TargetAttributes = {
+					526420161D115F67009D165E = {
+						CreatedOnToolsVersion = 7.3.1;
+					};
+					5264202F1D115F67009D165E = {
+						CreatedOnToolsVersion = 7.3.1;
+						TestTargetID = 526420161D115F67009D165E;
+					};
+					5264203A1D115F67009D165E = {
+						CreatedOnToolsVersion = 7.3.1;
+						TestTargetID = 526420161D115F67009D165E;
+					};
+				};
+			};
+			buildConfigurationList = 526420121D115F67009D165E /* Build configuration list for PBXProject "46_Client_Server_APIs_OAuth_T" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 5264200E1D115F67009D165E;
+			productRefGroup = 526420181D115F67009D165E /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				526420161D115F67009D165E /* 46_Client_Server_APIs_OAuth_T */,
+				5264202F1D115F67009D165E /* 46_Client_Server_APIs_OAuth_TTests */,
+				5264203A1D115F67009D165E /* 46_Client_Server_APIs_OAuth_TUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		526420151D115F67009D165E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5264202A1D115F67009D165E /* LaunchScreen.storyboard in Resources */,
+				526420271D115F67009D165E /* Assets.xcassets in Resources */,
+				526420251D115F67009D165E /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5264202E1D115F67009D165E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		526420391D115F67009D165E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		526420131D115F67009D165E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				526420551D115FC0009D165E /* SiSServerManager.m in Sources */,
+				526420531D115FC0009D165E /* SiSFriend.m in Sources */,
+				526420541D115FC0009D165E /* SiSFriendsTableViewController.m in Sources */,
+				5264201F1D115F67009D165E /* AppDelegate.m in Sources */,
+				5264201C1D115F67009D165E /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5264202C1D115F67009D165E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				526420351D115F67009D165E /* _6_Client_Server_APIs_OAuth_TTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		526420371D115F67009D165E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				526420401D115F67009D165E /* _6_Client_Server_APIs_OAuth_TUITests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		526420321D115F67009D165E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 526420161D115F67009D165E /* 46_Client_Server_APIs_OAuth_T */;
+			targetProxy = 526420311D115F67009D165E /* PBXContainerItemProxy */;
+		};
+		5264203D1D115F67009D165E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 526420161D115F67009D165E /* 46_Client_Server_APIs_OAuth_T */;
+			targetProxy = 5264203C1D115F67009D165E /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		526420231D115F67009D165E /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				526420241D115F67009D165E /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		526420281D115F67009D165E /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				526420291D115F67009D165E /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		526420421D115F67009D165E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		526420431D115F67009D165E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		526420451D115F67009D165E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = 46_Client_Server_APIs_OAuth_T/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "SiS.-6-Client-Server-APIs-OAuth-T";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		526420461D115F67009D165E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = 46_Client_Server_APIs_OAuth_T/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "SiS.-6-Client-Server-APIs-OAuth-T";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		526420481D115F67009D165E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = 46_Client_Server_APIs_OAuth_TTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "SiS.-6-Client-Server-APIs-OAuth-TTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/46_Client_Server_APIs_OAuth_T.app/46_Client_Server_APIs_OAuth_T";
+			};
+			name = Debug;
+		};
+		526420491D115F67009D165E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = 46_Client_Server_APIs_OAuth_TTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "SiS.-6-Client-Server-APIs-OAuth-TTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/46_Client_Server_APIs_OAuth_T.app/46_Client_Server_APIs_OAuth_T";
+			};
+			name = Release;
+		};
+		5264204B1D115F67009D165E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = 46_Client_Server_APIs_OAuth_TUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "SiS.-6-Client-Server-APIs-OAuth-TUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = 46_Client_Server_APIs_OAuth_T;
+			};
+			name = Debug;
+		};
+		5264204C1D115F67009D165E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = 46_Client_Server_APIs_OAuth_TUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "SiS.-6-Client-Server-APIs-OAuth-TUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = 46_Client_Server_APIs_OAuth_T;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		526420121D115F67009D165E /* Build configuration list for PBXProject "46_Client_Server_APIs_OAuth_T" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				526420421D115F67009D165E /* Debug */,
+				526420431D115F67009D165E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		526420441D115F67009D165E /* Build configuration list for PBXNativeTarget "46_Client_Server_APIs_OAuth_T" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				526420451D115F67009D165E /* Debug */,
+				526420461D115F67009D165E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		526420471D115F67009D165E /* Build configuration list for PBXNativeTarget "46_Client_Server_APIs_OAuth_TTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				526420481D115F67009D165E /* Debug */,
+				526420491D115F67009D165E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		5264204A1D115F67009D165E /* Build configuration list for PBXNativeTarget "46_Client_Server_APIs_OAuth_TUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5264204B1D115F67009D165E /* Debug */,
+				5264204C1D115F67009D165E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 5264200F1D115F67009D165E /* Project object */;
+}
