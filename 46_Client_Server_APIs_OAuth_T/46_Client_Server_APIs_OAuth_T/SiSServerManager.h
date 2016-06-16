@@ -12,28 +12,16 @@
 
 @interface SiSServerManager : NSObject
 
+@property (strong, nonatomic, readonly) SiSFriend* currentUser;
+
 + (SiSServerManager*) sharedManager;
+
+- (void) authorizeUser:(void(^)(SiSFriend* user)) completion;
 
 - (void) getFriendsWithOffset:(NSInteger) offset
                      andCount:(NSInteger) count
                     onSuccess:(void(^)(NSArray* friends)) success
                     onFailure:(void(^)(NSError* error, NSInteger statusCode)) failure;
 
-- (void) getFriendInfoWithId:(NSString*)friendID
-                 onSuccess:(void(^)(SiSFriend* friend))success
-                 onFailure:(void(^)(NSError *error))failure;
-
-- (void) getFollowersOrSubsriptionsWithMethod:(NSString*) method
-                                    ForUserID:(NSString*) friendID
-                                   WithOffset:(NSInteger) offset
-                                        count:(NSInteger) count
-                                    onSuccess:(void(^)(NSArray* objects)) success
-                                    onFailure:(void(^)(NSError* error)) failure;
-
-- (void) getWallPostsForUser:(NSString*) friendID
-                  withOffset:(NSInteger) offset
-                       count:(NSInteger) count
-                   onSuccess:(void(^)(NSArray* posts)) success
-                   onFailure:(void(^)(NSError* error, NSInteger statusCode)) failure;
 
 @end

@@ -17,6 +17,8 @@
 		526420531D115FC0009D165E /* SiSFriend.m in Sources */ = {isa = PBXBuildFile; fileRef = 5264204E1D115FC0009D165E /* SiSFriend.m */; };
 		526420541D115FC0009D165E /* SiSFriendsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 526420501D115FC0009D165E /* SiSFriendsTableViewController.m */; };
 		526420551D115FC0009D165E /* SiSServerManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 526420521D115FC0009D165E /* SiSServerManager.m */; };
+		528608DD1D1291EF0092B4F2 /* SiSLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 528608DC1D1291EF0092B4F2 /* SiSLoginViewController.m */; };
+		528608E01D12925E0092B4F2 /* SiSAccessToken.m in Sources */ = {isa = PBXBuildFile; fileRef = 528608DF1D12925E0092B4F2 /* SiSAccessToken.m */; };
 		FF0D3A67FC5B652A3386EA06 /* libPods-46_Client_Server_APIs_OAuth_T.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6A908551740EE780E6B8F826 /* libPods-46_Client_Server_APIs_OAuth_T.a */; };
 /* End PBXBuildFile section */
 
@@ -60,6 +62,10 @@
 		526420501D115FC0009D165E /* SiSFriendsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SiSFriendsTableViewController.m; sourceTree = "<group>"; };
 		526420511D115FC0009D165E /* SiSServerManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SiSServerManager.h; sourceTree = "<group>"; };
 		526420521D115FC0009D165E /* SiSServerManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SiSServerManager.m; sourceTree = "<group>"; };
+		528608DB1D1291EF0092B4F2 /* SiSLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SiSLoginViewController.h; sourceTree = "<group>"; };
+		528608DC1D1291EF0092B4F2 /* SiSLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SiSLoginViewController.m; sourceTree = "<group>"; };
+		528608DE1D12925E0092B4F2 /* SiSAccessToken.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SiSAccessToken.h; sourceTree = "<group>"; };
+		528608DF1D12925E0092B4F2 /* SiSAccessToken.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SiSAccessToken.m; sourceTree = "<group>"; };
 		6A908551740EE780E6B8F826 /* libPods-46_Client_Server_APIs_OAuth_T.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-46_Client_Server_APIs_OAuth_T.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -130,6 +136,10 @@
 				526420501D115FC0009D165E /* SiSFriendsTableViewController.m */,
 				526420511D115FC0009D165E /* SiSServerManager.h */,
 				526420521D115FC0009D165E /* SiSServerManager.m */,
+				528608DB1D1291EF0092B4F2 /* SiSLoginViewController.h */,
+				528608DC1D1291EF0092B4F2 /* SiSLoginViewController.m */,
+				528608DE1D12925E0092B4F2 /* SiSAccessToken.h */,
+				528608DF1D12925E0092B4F2 /* SiSAccessToken.m */,
 				526420231D115F67009D165E /* Main.storyboard */,
 				526420261D115F67009D165E /* Assets.xcassets */,
 				526420281D115F67009D165E /* LaunchScreen.storyboard */,
@@ -358,8 +368,10 @@
 			files = (
 				526420551D115FC0009D165E /* SiSServerManager.m in Sources */,
 				526420531D115FC0009D165E /* SiSFriend.m in Sources */,
+				528608E01D12925E0092B4F2 /* SiSAccessToken.m in Sources */,
 				526420541D115FC0009D165E /* SiSFriendsTableViewController.m in Sources */,
 				5264201F1D115F67009D165E /* AppDelegate.m in Sources */,
+				528608DD1D1291EF0092B4F2 /* SiSLoginViewController.m in Sources */,
 				5264201C1D115F67009D165E /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
