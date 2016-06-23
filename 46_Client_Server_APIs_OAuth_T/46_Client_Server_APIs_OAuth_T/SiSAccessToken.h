@@ -12,6 +12,6 @@
 
 @property (strong, nonatomic) NSString* token;
 @property (strong, nonatomic) NSDate* expirationDate;
-@property (strong, nonatomic) NSString* userID;
+@property (strong, nonatomic) NSString* friendID;
 
 @end

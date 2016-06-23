@@ -14,7 +14,8 @@
 @interface SiSFriendsTableViewController ()
 
 @property (strong, nonatomic) NSMutableArray* friendsArray;
-@property (assign, nonatomic) BOOL loadingData;
+
+@property (assign, nonatomic) BOOL firstTimeAppear;
 
 @end
 
@@ -29,8 +30,6 @@ static NSInteger friendsInRequest = 5;
     
     self.friendsArray = [NSMutableArray array];
     
-    self.loadingData = YES;
-    
     [self.navigationController.navigationBar setTitleTextAttributes:
      [NSDictionary dictionaryWithObjectsAndKeys:
       [UIColor grayColor], NSForegroundColorAttributeName,
@@ -38,7 +37,7 @@ static NSInteger friendsInRequest = 5;
     
     //[self getFriendsFromServer];
     
-    
+    self.firstTimeAppear = YES;
 
 }
 
@@ -46,9 +45,15 @@ static NSInteger friendsInRequest = 5;
     
     [super viewDidAppear:animated];
     
-    [[SiSServerManager sharedManager] authorizeUser:^(SiSFriend *user) {
-        NSLog(@"TADA!!!");
-    }];
+    if (self.firstTimeAppear) {
+        self.firstTimeAppear = NO;
+        
+        [[SiSServerManager sharedManager] authorizeUser:^(SiSFriend *friend) {
+            NSLog(@"AUTHORIZED!");
+            NSLog(@"%@ %@", friend.firstName, friend.lastName);
+        }];
+    }
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -77,8 +82,6 @@ static NSInteger friendsInRequest = 5;
                                withRowAnimation:UITableViewRowAnimationTop];
          [self.tableView endUpdates];
          
-         self.loadingData = NO;
-         
      } onFailure:^(NSError *error, NSInteger statusCode) {
          NSLog(@"error = %@ code = %d", [error localizedDescription], statusCode);
      }];
@@ -90,7 +93,7 @@ static NSInteger friendsInRequest = 5;
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
 
-    return [self.friendsArray count];
+    return [self.friendsArray count] + 1;
 }
 
 
@@ -106,63 +109,65 @@ static NSInteger friendsInRequest = 5;
         
     }
     
-    // Заполняем ячейки друзьями из словаря
+    if (indexPath.row == [self.friendsArray count]) {
+        
+        cell.textLabel.text = @"LOAD MORE";
+        cell.imageView.image = nil;
+        
+    } else {
+        
+        // Заполняем ячейки друзьями из словаря
+        
+        SiSFriend* friend = [self.friendsArray objectAtIndex:indexPath.row];
+        
+        cell.textLabel.text = [NSString stringWithFormat:@"%@ %@", friend.firstName, friend.lastName];
+        
+        // Добавим картинку к каждой строке
+        
+        NSURLRequest* request = [NSURLRequest requestWithURL:friend.image100URL
+                                                 cachePolicy:NSURLRequestReturnCacheDataElseLoad
+                                             timeoutInterval:60];
+        
+        __weak UITableViewCell* weakCell = cell;
+        
+        cell.imageView.image = nil;
+        
+        [cell.imageView setImageWithURLRequest:request
+                              placeholderImage:[UIImage imageNamed:@"preview.png"]
+                                       success:^(NSURLRequest* request, NSHTTPURLResponse* response, UIImage* image) {
+                                           
+                                           [UIView transitionWithView:weakCell.imageView
+                                                             duration:0.3f
+                                                              options:UIViewAnimationOptionTransitionCrossDissolve
+                                                           animations:^{
+                                                               weakCell.imageView.image = image;
+                                                               
+                                                               CALayer* imageLayer = weakCell.imageView.layer;
+                                                               [imageLayer setCornerRadius:imageLayer.frame.size.width/2];
+                                                               [imageLayer setMasksToBounds:YES];
+                                                               
+                                                           } completion:NULL];
+                                           
+                                       } failure:^(NSURLRequest* request, NSHTTPURLResponse* response, NSError* error) {
+                                           NSLog(@"Something bad...");
+                                       }];
+        
+    }
     
-    SiSFriend* friend = [self.friendsArray objectAtIndex:indexPath.row];
     
-    cell.textLabel.text = [NSString stringWithFormat:@"%@ %@", friend.firstName, friend.lastName];
-    
-   
-    
-    // Добавим картинку к каждой строке
-    
-    NSURLRequest* request = [NSURLRequest requestWithURL:friend.image100URL
-                                             cachePolicy:NSURLRequestReturnCacheDataElseLoad
-                                         timeoutInterval:60];
-    
-    __weak UITableViewCell* weakCell = cell;
-    
-    cell.imageView.image = nil;
-    
-    [cell.imageView setImageWithURLRequest:request
-                          placeholderImage:[UIImage imageNamed:@"preview.png"]
-                                   success:^(NSURLRequest* request, NSHTTPURLResponse* response, UIImage* image) {
-                                       
-                                       [UIView transitionWithView:weakCell.imageView
-                                                         duration:0.3f
-                                                          options:UIViewAnimationOptionTransitionCrossDissolve
-                                                       animations:^{
-                                                           weakCell.imageView.image = image;
-                                                           
-                                                           CALayer* imageLayer = weakCell.imageView.layer;
-                                                           [imageLayer setCornerRadius:imageLayer.frame.size.width/2];
-                                                           [imageLayer setMasksToBounds:YES];
-                                                           
-                                                       } completion:NULL];
-                                     
-                                   } failure:^(NSURLRequest* request, NSHTTPURLResponse* response, NSError* error) {
-                                       NSLog(@"Something bad...");
-                                   }];
     
     return cell;
 }
 
 #pragma mark - UIScrollViewDelegate
 
-- (void)scrollViewDidScroll:(UIScrollView *)scrollView {
-    
-    if ((scrollView.contentOffset.y + scrollView.frame.size.height) >= scrollView.contentSize.height) {
-        if (!self.loadingData)
-        {
-            self.loadingData = YES;
-            [self getFriendsFromServer];
-        }
-    }
-}
-
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    
+    if (indexPath.row == [self.friendsArray count]) {
+        [self getFriendsFromServer];
+    }
     
 }
 

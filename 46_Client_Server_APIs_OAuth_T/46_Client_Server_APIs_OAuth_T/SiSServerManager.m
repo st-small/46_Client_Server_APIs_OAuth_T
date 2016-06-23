@@ -36,14 +36,15 @@
     return manager;
 }
 
-- (instancetype)init
-{
+- (id)init {
+    
     self = [super init];
     if (self) {
         
         NSURL* url = [NSURL URLWithString:@"https://api.vk.com/method/"];
         self.sessionManager = [[AFHTTPSessionManager alloc] initWithBaseURL:url];
     }
+    
     return self;
 }
 
@@ -53,9 +54,24 @@
         
         self.accessToken = token;
         
-        if (completion) {
+        if (token) {
+            
+            [self getFriend:self.accessToken.friendID
+                onSuccess:^(SiSFriend* friend) {
+                    if (completion) {
+                        completion(friend);
+                    }
+                }
+                onFailure:^(NSError *error, NSInteger statusCode) {
+                    if (completion) {
+                        completion(nil);
+                    }
+                }];
+            
+        } else if (completion) {
             completion(nil);
         }
+        
     }];
     
     UINavigationController* nav = [[UINavigationController alloc] initWithRootViewController:vc];
@@ -65,6 +81,42 @@
     [mainVC presentViewController:nav
                          animated:YES
                        completion:nil];
+}
+
+- (void) getFriend:(NSString*) friendID
+       onSuccess:(void(^)(SiSFriend* friend)) success
+       onFailure:(void(^)(NSError* error, NSInteger statusCode)) failure {
+    
+    NSDictionary* params =
+    [NSDictionary dictionaryWithObjectsAndKeys:
+     friendID,          @"user_ids",
+     @"photo_100",       @"fields",
+     @"nom",            @"name_case", nil];
+    
+    [self.sessionManager
+     GET:@"users.get"
+     parameters:params
+     progress: nil
+     success:^(NSURLSessionDataTask* operation, NSDictionary* responseObject) {
+         NSLog(@"JSON: %@", responseObject);
+         
+         NSArray* dictsArray = [responseObject objectForKey:@"response"];
+         
+         if ([dictsArray count] > 0) {
+             SiSFriend* friend = [[SiSFriend alloc] initWithServerResponse:[dictsArray firstObject]];
+             if (success) {
+                 success(friend);
+             }
+         }
+         
+     } failure:^(NSURLSessionDataTask *operation, NSError *error) {
+         
+         NSLog(@"Error: %@", error);
+         
+         if (failure) {
+             failure(error, operation.error.code);
+         }
+     }];
 }
 
 - (void) getFriendsWithOffset:(NSInteger) offset

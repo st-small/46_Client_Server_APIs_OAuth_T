@@ -42,7 +42,9 @@
     
     self.webView = webView;
     
-    UIBarButtonItem* item = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCancel target:self action:@selector(actionCancel:)];
+    UIBarButtonItem* item = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCancel
+                                                                          target:self
+                                                                          action:@selector(actionCancel:)];
     
     [self.navigationItem setRightBarButtonItem:item animated:NO];
     
@@ -53,9 +55,7 @@
                            "display=mobile&"
                            "redirect_uri=https://oauth.vk.com/blank.html&"
                            "scope=139286&"
-                           "response_type=token&"
-                           "revoke=1&"
-                           "v=5.52";
+                           "response_type=token";
     
     NSURL* url = [NSURL URLWithString:urlString];
     
@@ -91,6 +91,58 @@
 #pragma mark - UIWebViewDelegate
 
 - (BOOL)webView:(UIWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request navigationType:(UIWebViewNavigationType)navigationType {
+    
+    if ([[[request URL] description] rangeOfString:@"#access_token="].location != NSNotFound) {
+        
+        SiSAccessToken* token = [[SiSAccessToken alloc] init];
+        
+        NSString* query = [[request URL] description];
+        
+        NSArray* array = [query componentsSeparatedByString:@"#"];
+        
+        if ([array count] > 1) {
+            
+            query = [array lastObject];
+        }
+        
+        NSArray* pairs = [query componentsSeparatedByString:@"&"];
+        
+        for (NSString* pair in pairs) {
+            
+            NSArray* values = [pair componentsSeparatedByString:@"="];
+            
+            if ([values count] == 2) {
+                
+                NSString* key = [values firstObject];
+                
+                if ([key isEqualToString:@"access_token"]) {
+                    
+                    token.token = [values lastObject];
+                    
+                } else if ([key isEqualToString:@"expires_in"]) {
+                 
+                    NSTimeInterval interval = [[values lastObject] doubleValue];
+                    
+                    token.expirationDate = [NSDate dateWithTimeIntervalSinceNow:interval];
+                    
+                } else if ([key isEqualToString:@"user_id"]) {
+                    
+                    token.friendID = [values lastObject];
+                }
+            }
+        }
+        
+        self.webView.delegate = nil;
+        
+        if (self.completionBlock) {
+            self.completionBlock(token);
+        }
+        
+        [self dismissViewControllerAnimated:YES
+                                 completion:nil];
+        
+        return NO;
+    }
     
     NSLog(@"%@", [request URL]);
     

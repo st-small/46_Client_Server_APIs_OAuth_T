@@ -18,6 +18,10 @@
 
 - (void) authorizeUser:(void(^)(SiSFriend* user)) completion;
 
+- (void) getFriend:(NSString*) friendID
+         onSuccess:(void(^)(SiSFriend* friend)) success
+         onFailure:(void(^)(NSError* error, NSInteger statusCode)) failure;
+
 - (void) getFriendsWithOffset:(NSInteger) offset
                      andCount:(NSInteger) count
                     onSuccess:(void(^)(NSArray* friends)) success
