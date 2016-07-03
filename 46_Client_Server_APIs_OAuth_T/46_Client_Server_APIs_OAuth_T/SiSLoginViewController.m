@@ -55,13 +55,14 @@
                            "display=mobile&"
                            "redirect_uri=https://oauth.vk.com/blank.html&"
                            "scope=139286&"
+                           "revoke=1&"
                            "response_type=token";
     
     NSURL* url = [NSURL URLWithString:urlString];
     
     NSURLRequest* request = [NSURLRequest requestWithURL:url];
     
-    webView.delegate =self;
+    webView.delegate = self;
     
     [webView loadRequest:request];
 }
