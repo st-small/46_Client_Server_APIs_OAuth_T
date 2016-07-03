@@ -107,6 +107,12 @@
              if (success) {
                  success(friend);
              }
+             
+         } else {
+             
+             if (failure) {
+                 failure(nil, operation.error.code);
+             }
          }
          
      } failure:^(NSURLSessionDataTask *operation, NSError *error) {
