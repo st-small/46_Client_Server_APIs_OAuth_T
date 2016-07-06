@@ -6,9 +6,9 @@
 //  Copyright © 2016 Stanly Shiyanovskiy. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
+#import "SiSServerObject.h"
 
-@interface SiSFriend : NSObject
+@interface SiSFriend : SiSServerObject
 
 @property (strong, nonatomic) NSString* firstName;
 @property (strong, nonatomic) NSString* lastName;
@@ -21,7 +21,5 @@
 @property (strong, nonatomic) NSString* city;
 @property (strong, nonatomic) NSString* country;
 @property (strong, nonatomic) NSString* dateOfBirth;
-
-- (id) initWithServerResponse:(NSDictionary*) responseObject;
 
 @end

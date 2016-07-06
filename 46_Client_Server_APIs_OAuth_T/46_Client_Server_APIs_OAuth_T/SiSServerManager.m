@@ -8,9 +8,11 @@
 
 #import "SiSServerManager.h"
 #import "AFNetworking.h"
-#import "SiSFriend.h"
 #import "SiSLoginViewController.h"
 #import "SiSAccessToken.h"
+
+#import "SiSFriend.h"
+#import "SiSPost.h"
 
 @interface SiSServerManager ()
 
@@ -173,5 +175,97 @@
     
 }
 
+- (void) getGroupWall:(NSString*) groupID
+           withOffset:(NSInteger) offset
+             andCount:(NSInteger) count
+            onSuccess:(void(^)(NSArray* posts)) success
+            onFailure:(void(^)(NSError* error, NSInteger statusCode)) failure {
+    
+    if (![groupID hasPrefix:@"-"]) {
+        groupID = [@"-" stringByAppendingString:groupID];
+    }
+    
+    NSDictionary* params = [NSDictionary dictionaryWithObjectsAndKeys:
+                            groupID,        @"owner_id",
+                            @"ru",          @"lang",
+                            @(count),       @"count",
+                            @(offset),      @"offset",
+                            @"all",         @"filter", nil];
+    
+    [self.sessionManager GET:@"wall.get"
+                  parameters:params
+                    progress:nil
+                     success:^(NSURLSessionDataTask* task, NSDictionary* responseObject) {
+                         NSLog(@"JSON: %@", responseObject);
+                         
+                         NSArray* dictsArray = [responseObject objectForKey:@"response"];
+                         
+                         if ([dictsArray count] > 1) {
+                             dictsArray = [dictsArray subarrayWithRange:NSMakeRange(1, [dictsArray count] - 1)];
+                             
+                         } else {
+                             
+                             dictsArray = nil;
+                         }
+                         
+                         NSMutableArray* objectsArray = [NSMutableArray array];
+                         
+                         for (NSDictionary* dict in dictsArray) {
+                             
+                             SiSPost* post = [[SiSPost alloc] initWithServerResponse:dict];
+                             
+                             [objectsArray addObject:post];
+                         }
+                         
+                         if (success) {
+                             success(objectsArray);
+                         }
+                         
+                     } failure:^(NSURLSessionTask* task, NSError* error) {
+                         NSLog(@"Error: %@", error);
+                         
+                         if (failure) {
+                             failure(error, task.error.code);
+                         }
+                     }];
+
+    
+    
+}
+
+- (void) postText:(NSString*) text
+      onGroupWall:(NSString*) groupID
+        onSuccess:(void(^)(id result)) success
+        onFailure:(void(^)(NSError* error, NSInteger statusCode)) failure {
+    
+    if (![groupID hasPrefix:@"-"]) {
+        groupID = [@"-" stringByAppendingString:groupID];
+    }
+    
+    NSDictionary* params = [NSDictionary dictionaryWithObjectsAndKeys:
+                            groupID,                @"owner_id",
+                            @"ru",                  @"lang",
+                            text,                   @"message",
+                            self.accessToken.token, @"access_token", nil];
+    
+    [self.sessionManager POST:@"wall.post"
+                   parameters:params
+                     progress:nil
+                      success:^(NSURLSessionDataTask* task, NSDictionary* responseObject) {
+                         NSLog(@"JSON: %@", responseObject);
+                          
+                          if (success) {
+                             success(responseObject);
+                         }
+                         
+                     } failure:^(NSURLSessionTask* task, NSError* error) {
+                         NSLog(@"Error: %@", error);
+                         
+                         if (failure) {
+                             failure(error, task.error.code);
+                         }
+                     }];
+    
+}
 
 @end

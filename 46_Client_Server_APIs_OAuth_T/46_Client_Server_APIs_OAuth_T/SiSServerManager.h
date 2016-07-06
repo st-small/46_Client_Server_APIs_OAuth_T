@@ -27,5 +27,15 @@
                     onSuccess:(void(^)(NSArray* friends)) success
                     onFailure:(void(^)(NSError* error, NSInteger statusCode)) failure;
 
+- (void) getGroupWall:(NSString*) groupID
+           withOffset:(NSInteger) offset
+             andCount:(NSInteger) count
+            onSuccess:(void(^)(NSArray* posts)) success
+            onFailure:(void(^)(NSError* error, NSInteger statusCode)) failure;
+
+- (void) postText:(NSString*) text
+      onGroupWall:(NSString*) groupID
+        onSuccess:(void(^)(id result)) success
+        onFailure:(void(^)(NSError* error, NSInteger statusCode)) failure;
 
 @end

@@ -12,7 +12,7 @@
 
 - (id) initWithServerResponse:(NSDictionary*) responseObject {
     
-    self = [super init];
+    self = [super initWithServerResponse:responseObject];
     if (self) {
         
         self.firstName = [responseObject objectForKey:@"first_name"];

@@ -8,8 +8,9 @@
 
 #import "SiSFriendsTableViewController.h"
 #import "SiSServerManager.h"
-#import "SiSFriend.h"
 #import "UIImageView+AFNetworking.h"
+
+#import "SiSFriend.h"
 
 @interface SiSFriendsTableViewController ()
 

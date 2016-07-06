@@ -19,6 +19,10 @@
 		526420551D115FC0009D165E /* SiSServerManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 526420521D115FC0009D165E /* SiSServerManager.m */; };
 		528608DD1D1291EF0092B4F2 /* SiSLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 528608DC1D1291EF0092B4F2 /* SiSLoginViewController.m */; };
 		528608E01D12925E0092B4F2 /* SiSAccessToken.m in Sources */ = {isa = PBXBuildFile; fileRef = 528608DF1D12925E0092B4F2 /* SiSAccessToken.m */; };
+		52876D181D2974ED001A981E /* SiSPost.m in Sources */ = {isa = PBXBuildFile; fileRef = 52876D171D2974ED001A981E /* SiSPost.m */; };
+		52876D1C1D2975FC001A981E /* SiSServerObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 52876D1B1D2975FC001A981E /* SiSServerObject.m */; };
+		52876D1F1D29835A001A981E /* SiSGroupWallViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 52876D1E1D29835A001A981E /* SiSGroupWallViewController.m */; };
+		52876D221D2986A4001A981E /* SiSPostCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 52876D211D2986A4001A981E /* SiSPostCell.m */; };
 		FF0D3A67FC5B652A3386EA06 /* libPods-46_Client_Server_APIs_OAuth_T.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6A908551740EE780E6B8F826 /* libPods-46_Client_Server_APIs_OAuth_T.a */; };
 /* End PBXBuildFile section */
 
@@ -66,6 +70,14 @@
 		528608DC1D1291EF0092B4F2 /* SiSLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SiSLoginViewController.m; sourceTree = "<group>"; };
 		528608DE1D12925E0092B4F2 /* SiSAccessToken.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SiSAccessToken.h; sourceTree = "<group>"; };
 		528608DF1D12925E0092B4F2 /* SiSAccessToken.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SiSAccessToken.m; sourceTree = "<group>"; };
+		52876D161D2974ED001A981E /* SiSPost.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SiSPost.h; sourceTree = "<group>"; };
+		52876D171D2974ED001A981E /* SiSPost.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SiSPost.m; sourceTree = "<group>"; };
+		52876D1A1D2975FC001A981E /* SiSServerObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SiSServerObject.h; sourceTree = "<group>"; };
+		52876D1B1D2975FC001A981E /* SiSServerObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SiSServerObject.m; sourceTree = "<group>"; };
+		52876D1D1D29835A001A981E /* SiSGroupWallViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SiSGroupWallViewController.h; sourceTree = "<group>"; };
+		52876D1E1D29835A001A981E /* SiSGroupWallViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SiSGroupWallViewController.m; sourceTree = "<group>"; };
+		52876D201D2986A4001A981E /* SiSPostCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SiSPostCell.h; sourceTree = "<group>"; };
+		52876D211D2986A4001A981E /* SiSPostCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SiSPostCell.m; sourceTree = "<group>"; };
 		6A908551740EE780E6B8F826 /* libPods-46_Client_Server_APIs_OAuth_T.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-46_Client_Server_APIs_OAuth_T.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -130,10 +142,12 @@
 			children = (
 				5264201D1D115F67009D165E /* AppDelegate.h */,
 				5264201E1D115F67009D165E /* AppDelegate.m */,
-				5264204D1D115FC0009D165E /* SiSFriend.h */,
-				5264204E1D115FC0009D165E /* SiSFriend.m */,
+				52876D231D2986A9001A981E /* Cells */,
+				52876D191D2975D4001A981E /* Models */,
 				5264204F1D115FC0009D165E /* SiSFriendsTableViewController.h */,
 				526420501D115FC0009D165E /* SiSFriendsTableViewController.m */,
+				52876D1D1D29835A001A981E /* SiSGroupWallViewController.h */,
+				52876D1E1D29835A001A981E /* SiSGroupWallViewController.m */,
 				526420511D115FC0009D165E /* SiSServerManager.h */,
 				526420521D115FC0009D165E /* SiSServerManager.m */,
 				528608DB1D1291EF0092B4F2 /* SiSLoginViewController.h */,
@@ -173,6 +187,28 @@
 				526420411D115F67009D165E /* Info.plist */,
 			);
 			path = 46_Client_Server_APIs_OAuth_TUITests;
+			sourceTree = "<group>";
+		};
+		52876D191D2975D4001A981E /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				52876D1A1D2975FC001A981E /* SiSServerObject.h */,
+				52876D1B1D2975FC001A981E /* SiSServerObject.m */,
+				5264204D1D115FC0009D165E /* SiSFriend.h */,
+				5264204E1D115FC0009D165E /* SiSFriend.m */,
+				52876D161D2974ED001A981E /* SiSPost.h */,
+				52876D171D2974ED001A981E /* SiSPost.m */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		52876D231D2986A9001A981E /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				52876D201D2986A4001A981E /* SiSPostCell.h */,
+				52876D211D2986A4001A981E /* SiSPostCell.m */,
+			);
+			name = Cells;
 			sourceTree = "<group>";
 		};
 		71F87B16732C429A1D8724BB /* Pods */ = {
@@ -367,11 +403,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				526420551D115FC0009D165E /* SiSServerManager.m in Sources */,
+				52876D1C1D2975FC001A981E /* SiSServerObject.m in Sources */,
+				52876D181D2974ED001A981E /* SiSPost.m in Sources */,
 				526420531D115FC0009D165E /* SiSFriend.m in Sources */,
 				528608E01D12925E0092B4F2 /* SiSAccessToken.m in Sources */,
 				526420541D115FC0009D165E /* SiSFriendsTableViewController.m in Sources */,
+				52876D221D2986A4001A981E /* SiSPostCell.m in Sources */,
 				5264201F1D115F67009D165E /* AppDelegate.m in Sources */,
 				528608DD1D1291EF0092B4F2 /* SiSLoginViewController.m in Sources */,
+				52876D1F1D29835A001A981E /* SiSGroupWallViewController.m in Sources */,
 				5264201C1D115F67009D165E /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
